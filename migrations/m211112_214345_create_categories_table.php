@@ -14,9 +14,9 @@ class m211112_214345_create_categories_table extends Migration
     {
         $this->createTable('categories', [
             'id' => $this->primaryKey(),
-            'name' => $this->string(100),
+            'name' => $this->string(100)->notNull(),
             'parent_id' => $this->integer()->unsigned()->null(),
-            'level' => $this->integer()->unsigned()
+            'level' => $this->integer()->unsigned()->notNull()
         ]);
 
         $this->addForeignKey(
